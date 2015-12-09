@@ -1,10 +1,11 @@
-# Ruby Style Guide
+# Planet Argon Ruby Style Guide (forked from Airbnb)
 
-This is Airbnb's Ruby Style Guide.
+This is Planet Argons's Ruby Style Guide.
 
-It was inspired by [Github's guide][github-ruby] and [Bozhidar Batsov's guide][bbatsov-ruby].
+It is forked from Airbnb's Ruby style guide,
+which was inspired by [Github's guide][github-ruby] and [Bozhidar Batsov's guide][bbatsov-ruby].
 
-Airbnb also maintains a [JavaScript Style Guide][airbnb-javascript].
+Planet Argon also maintains a [JavaScript Style Guide][planetargon-javascript].
 
 ## Table of Contents
   1.  [Whitespace](#whitespace)
@@ -1181,6 +1182,7 @@ in inheritance.
 
 [airbnb-javascript]: https://github.com/airbnb/javascript
 [bbatsov-ruby]: https://github.com/bbatsov/ruby-style-guide
+[planetargon-javascript]: https://github.com/planetargon/javascript
 [github-ruby]: https://github.com/styleguide/ruby
 [google-c++]: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml
 [google-c++-comments]: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Comments
