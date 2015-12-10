@@ -7,6 +7,10 @@ which was inspired by [Github's guide][github-ruby] and [Bozhidar Batsov's guide
 
 Planet Argon also maintains a [JavaScript Style Guide][planetargon-javascript].
 
+Keep in mind that because of the range of projects that we have, a single style guide
+will likely never apply to everything. When in doubt, use your best judgement and
+try to keep consistency within a project.
+
 ## Table of Contents
   1.  [Whitespace](#whitespace)
       1. [Indentation](#indentation)
