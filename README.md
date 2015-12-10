@@ -248,11 +248,12 @@ Portions of this section borrow heavily from the Google
 
 ### File/class-level comments
 
-Every class definition should have an accompanying comment that describes what
-it is for and how it should be used.
-
-A file that contains zero classes or more than one class should have a comment
-at the top describing its contents.
+The Airbnb style guide prescribes that every class should have a comment,
+and most files should have file level comments. Because most of our projects are in rails,
+and most files and classes are automatically generated, these become less necessary.
+I think that a good rule of thumb is that files that perform the expected function in the expected place
+(such as a model or a controller) do not need file or class level comments.
+If something deviates from the norm (e.g. a module in lib) then these comments are more useful.
 
 ```ruby
 # Automatic conversion of one locale to another where it is possible, like
@@ -284,60 +285,6 @@ module Translation
   class AmericanToBritish < AmericanToColonial
     ...
   end
-```
-
-All files, including data and config files, should have file-level comments. From ```translation/config/colonial_spelling_variants.yml```:
-
-```ruby
-# List of American-to-British spelling variants.
-#
-# This list is made with
-# lib/tasks/list_american_to_british_spelling_variants.rake.
-#
-# It contains words with general spelling variation patterns:
-#   [trave]led/lled, [real]ize/ise, [flav]or/our, [cent]er/re, plus
-# and these extras:
-#   learned/learnt, practices/practises, airplane/aeroplane, ...
-
-sectarianizes: sectarianises
-neutralization: neutralisation
-...
-```
-
-### Function comments
-
-Every function declaration should have comments immediately preceding it that
-describe what the function does and how to use it. These comments should be
-descriptive ("Opens the file") rather than imperative ("Open the file"); the
-comment describes the function, it does not tell the function what to do. In
-general, these comments do not describe how the function performs its task.
-Instead, that should be left to comments interspersed in the function's code.
-
-Every function should mention what the inputs and outputs are, unless it meets
-all of the following criteria:
-
-* not externally visible
-* very short
-* obvious
-
-You may use whatever format you wish. In Ruby, two popular function
-documentation schemes are [TomDoc](http://tomdoc.org/) and
-[YARD](http://rubydoc.info/docs/yard/file/docs/GettingStarted.md). You can also
-just write things out concisely:
-
-```ruby
-# Returns the fallback locales for the_locale.
-# If opts[:exclude_default] is set, the default locale, which is otherwise
-# always the last one in the returned list, will be excluded.
-#
-# For example:
-#   fallbacks_for(:"pt-BR")
-#     => [:"pt-BR", :pt, :en]
-#   fallbacks_for(:"pt-BR", :exclude_default => true)
-#     => [:"pt-BR", :pt]
-def fallbacks_for(the_locale, opts = {})
-  ...
-end
 ```
 
 ### Block and inline comments
@@ -385,33 +332,77 @@ using a comma when you should be using a semicolon, it is very important that
 source code maintain a high level of clarity and readability. Proper
 punctuation, spelling, and grammar help with that goal.
 
-### TODO comments
-
-Use TODO comments for code that is temporary, a short-term solution, or
-good-enough but not perfect.
-
-TODOs should include the string TODO in all caps, followed by the full name
-of the person who can best provide context about the problem referenced by the
-TODO, in parentheses. A colon is optional. A comment explaining what there is
-to do is required. The main purpose is to have a consistent TODO format that
-can be searched to find the person who can provide more details upon request.
-A TODO is not a commitment that the person referenced will fix the problem.
-Thus when you create a TODO, it is almost always your name that is given.
-
-```ruby
-  # bad
-  # TODO(RS): Use proper namespacing for this constant.
-
-  # bad
-  # TODO(drumm3rz4lyfe): Use proper namespacing for this constant.
-
-  # good
-  # TODO(Ringo Starr): Use proper namespacing for this constant.
-```
-
 ### Commented-out code
 
-Never leave commented-out code in our codebase.
+Never leave commented-out code in a project.
+
+### Comment Annotations
+
+* <a name="annotate-above"></a>
+  Annotations should usually be written on the line immediately above the
+  relevant code.
+<sup>[[link](#annotate-above)]</sup>
+
+* <a name="annotate-keywords"></a>
+  The annotation keyword is followed by a colon and a space, then a note
+  describing the problem.
+<sup>[[link](#annotate-keywords)]</sup>
+
+* <a name="indent-annotations"></a>
+  If multiple lines are required to describe the problem, subsequent lines
+  should be indented three spaces after the `#` (one general plus two for
+  indentation purpose).
+<sup>[[link](#indent-annotations)]</sup>
+
+  ```Ruby
+  def bar
+    # FIXME: This has crashed occasionally since v3.2.1. It may
+    #   be related to the BarBazUtil upgrade.
+    baz(:quux)
+  end
+  ```
+
+* <a name="rare-eol-annotations"></a>
+  In cases where the problem is so obvious that any documentation would be
+  redundant, annotations may be left at the end of the offending line with no
+  note. This usage should be the exception and not the rule.
+<sup>[[link](#rare-eol-annotations)]</sup>
+
+  ```Ruby
+  def bar
+    sleep 100 # OPTIMIZE
+  end
+  ```
+
+* <a name="todo"></a>
+  Use `TODO` to note missing features or functionality that should be added at
+  a later date.
+<sup>[[link](#todo)]</sup>
+
+* <a name="fixme"></a>
+  Use `FIXME` to note broken code that needs to be fixed.
+<sup>[[link](#fixme)]</sup>
+
+* <a name="optimize"></a>
+  Use `OPTIMIZE` to note slow or inefficient code that may cause performance
+  problems.
+<sup>[[link](#optimize)]</sup>
+
+* <a name="hack"></a>
+  Use `HACK` to note code smells where questionable coding practices were used
+  and should be refactored away.
+<sup>[[link](#hack)]</sup>
+
+* <a name="review"></a>
+  Use `REVIEW` to note anything that should be looked at to confirm it is
+  working as intended. For example: `REVIEW: Are we sure this is how the client
+  does X currently?`
+<sup>[[link](#review)]</sup>
+
+* <a name="document-annotations"></a>
+  Use other custom annotation keywords if it feels appropriate, but be sure to
+  document them in your project's `README` or similar.
+<sup>[[link](#document-annotations)]</sup>
 
 ## Methods
 
