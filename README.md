@@ -19,7 +19,6 @@ try to keep consistency within a project.
   1.  [Line Length](#line-length)
   1.  [Commenting](#commenting)
       1. [File/class-level comments](#fileclass-level-comments)
-      1. [Function comments](#function-comments)
       1. [Block and inline comments](#block-and-inline-comments)
       1. [Punctuation, spelling, and grammar](#punctuation-spelling-and-grammar)
       1. [TODO comments](#todo-comments)
