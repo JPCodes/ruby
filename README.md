@@ -4,6 +4,8 @@ This is Planet Argons's Ruby Style Guide.
 
 It is forked from [Airbnb's Ruby style guide][airbnb-ruby],
 which was inspired by [Github's guide][github-ruby] and [Bozhidar Batsov's guide][bbatsov-ruby].
+Several sections of this have been updated to follow [Batsov's][bbatsov-ruby] where
+it seems more applicable.
 
 Planet Argon also maintains a [JavaScript Style Guide][planetargon-javascript].
 
