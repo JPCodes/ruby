@@ -2,7 +2,7 @@
 
 This is Planet Argons's Ruby Style Guide.
 
-It is forked from Airbnb's Ruby style guide,
+It is forked from [Airbnb's Ruby style guide][airbnb-ruby],
 which was inspired by [Github's guide][github-ruby] and [Bozhidar Batsov's guide][bbatsov-ruby].
 
 Planet Argon also maintains a [JavaScript Style Guide][planetargon-javascript].
@@ -1165,3 +1165,4 @@ in inheritance.
 [google-c++-comments]: http://google-styleguide.googlecode.com/svn/trunk/cppguide.xml#Comments
 [google-python-comments]: http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Comments
 [ruby-naming-bang]: http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
+[airbnb-ruby]: https://github.com/airbnb/ruby
