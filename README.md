@@ -9,6 +9,8 @@ it seems more applicable.
 
 Planet Argon also maintains a [JavaScript Style Guide][planetargon-javascript].
 
+For Rails specific styles, [Bozidar Batsov's Rails style guide][bbatsov-rails] is a good resource. 
+
 Keep in mind that because of the range of projects that we have, a single style guide
 will likely never apply to everything. When in doubt, use your best judgement and
 try to keep consistency within a project.
@@ -1185,3 +1187,4 @@ in inheritance.
 [google-python-comments]: http://google-styleguide.googlecode.com/svn/trunk/pyguide.html#Comments
 [ruby-naming-bang]: http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
 [airbnb-ruby]: https://github.com/airbnb/ruby
+[bbatsov-rails]: https://github.com/bbatsov/rails-style-guide
