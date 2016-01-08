@@ -95,14 +95,22 @@ try to keep consistency within a project.
     end
     ```
 
-* Indent succeeding lines in multi-line boolean expressions.
+* Indent succeeding lines in multi-line boolean expressions, or create intermediate variables
+to simplify the expression.
 
     ```ruby
     # good
     def is_eligible?(user)
-      Trebuchet.current.launch?(ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG) &&
-        is_in_program?(user) &&
-        program_not_expired
+      Trebuchet.current.launch?(ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG) \
+      && is_in_program?(user) \
+      && program_not_expired
+    end
+
+    # good - create intermediate variables
+    def is_eligible?(user)
+      trebuchet_flag = ProgramEligibilityHelper::PROGRAM_TREBUCHET_FLAG
+      launch = Trebuchet.current.launch?(trebuchet_flag)
+      launch && is_in_program?(user) && program_not_expired
     end
 
     # bad
